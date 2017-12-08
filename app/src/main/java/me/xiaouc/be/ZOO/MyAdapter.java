@@ -116,7 +116,6 @@ class MyAdapter extends BaseAdapter implements Filterable {
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
                 zooInfo = (ArrayList<ZooInfo>) filterResults.values;
                 for (int j = 0; j < zooInfo.size(); j++) {
                     Log.d("TAG", j + ":" + orgzooInfo.get(j).Type);

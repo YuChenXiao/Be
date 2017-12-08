@@ -119,20 +119,18 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="181dp"
+            android:layout_width="271dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="false"
             android:layout_alignParentTop="false"
             android:layout_gravity="top|center"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:gravity="center"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="NotSibling" />
 
         <ListView
             android:id="@+id/listview"
@@ -146,12 +144,13 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tv3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="41dp"
             android:layout_marginTop="8dp"
             android:text="搜尋 :"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:visibility="invisible"
             app:layout_constraintEnd_toStartOf="@+id/searchView"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
     </android.support.constraint.ConstraintLayout>

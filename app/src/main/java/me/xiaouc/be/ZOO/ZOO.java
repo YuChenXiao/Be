@@ -30,7 +30,7 @@ import me.xiaouc.be.R;
 
 public class ZOO extends AppCompatActivity {
     ListView lv;
-    TextView tv,tvv;
+    TextView tv,tvv,tv3;
     MyAdapter adapter;
     Myzoo z;
     ProgressBar progressBar;
@@ -43,9 +43,11 @@ public class ZOO extends AppCompatActivity {
         searchView=(SearchView)findViewById(R.id.searchView);
         tv = (TextView)findViewById(R.id.text1);
         tvv = (TextView)findViewById(R.id.text2);
+        tv3 = (TextView)findViewById(R.id.tv3);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        searchView.setIconifiedByDefault(false);
+        searchView.setIconifiedByDefault(true);
         searchView.setFocusable(false);
+        searchView.getQuery();
         setTitle("動物認養資訊");
         searchView.setQueryHint("輸入犬貓搜尋");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -77,14 +79,16 @@ public class ZOO extends AppCompatActivity {
                         progressBar.setVisibility(View.VISIBLE);
                         tv.setVisibility(View.VISIBLE);
                         tvv.setVisibility(View.VISIBLE);
-                        //
-
+                        searchView.setVisibility(View.INVISIBLE);
+                        tv3.setVisibility(View.INVISIBLE);
                         adapter.notifyDataSetChanged();
                         lv.setAdapter(adapter);
                         //隱藏讀取中圖像文字
                         progressBar.setVisibility(View.INVISIBLE);
                         tv.setVisibility(View.INVISIBLE);
                         tvv.setVisibility(View.INVISIBLE);
+                        searchView.setVisibility(View.VISIBLE);
+                        tv3.setVisibility(View.VISIBLE);
                         //
                     }
                 }, new Response.ErrorListener() {
